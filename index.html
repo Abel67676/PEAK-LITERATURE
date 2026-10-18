@@ -1,0 +1,59 @@
+html = r'''<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100e0c">
+  <meta name="description" content="Nocturne Library — a dark academia archive of classic literature and original short fiction.">
+  <title>Nocturne Library | The Literary Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a href="#" class="brand" data-home><span class="brand-icon">N.</span><span>NOCTURNE <small>THE LITERARY ARCHIVE</small></span></a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  <nav class="navigation" id="navigation" aria-label="Main navigation">
+    <a href="#" data-home>Home</a><a href="#library" data-library>Library</a><a href="#featured" data-featured>Featured</a>
+    <button id="themeToggle" class="nav-button">Light mode ☼</button>
+  </nav>
+</header>
+<main>
+<section id="homeView">
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">A SANCTUARY FOR THE THINKING MIND</p>
+      <h1>Some books are<br>doors to <em>darkness.</em></h1>
+      <p class="hero-description">Enter a world of philosophical questions, troubled souls, forgotten kingdoms, and stories that remain long after the last page.</p>
+      <a href="#library" class="gold-button" data-library>Explore the collection <span>↗</span></a>
+      <div class="hero-note">EST. IN THE SILENCE OF MIDNIGHT</div>
+    </div><div class="hero-side-text">READ · THINK · REMEMBER</div>
+  </section>
+  <section class="quote-strip"><span class="quote-mark">“</span><p>A room without books is like a body without a soul.</p><span class="quote-credit">— CICERO, ATTRIBUTED</span></section>
+  <section class="library-section" id="featured"><div class="section-heading"><div><p class="eyebrow">THE CURATOR'S SELECTION</p><h2>Begin with the <em>classics.</em></h2></div><button class="text-button" data-library>View the archive ↗</button></div><div id="featuredGrid" class="book-grid"></div></section>
+  <section class="manifesto"><p class="eyebrow">BEYOND ENTERTAINMENT</p><h2>Read not to escape life,<br>but to <em>understand it.</em></h2><p>Philosophy. Tragedy. The human condition. Every book is an invitation to question what you believe.</p></section>
+  <section class="library-section" id="library">
+    <div class="section-heading"><div><p class="eyebrow">THIRTY VOLUMES · ONE ARCHIVE</p><h2>The <em>library.</em></h2></div><span class="book-count" id="bookCount">30 VOLUMES</span></div>
+    <div class="filter-row"><label class="search-box"><span>⌕</span><input type="search" id="searchInput" placeholder="Search title, author, genre..." aria-label="Search the library"></label>
+    <select id="genreFilter" aria-label="Filter by genre"><option value="all">All genres</option></select>
+    <select id="sortFilter" aria-label="Sort books"><option value="title">Sort: Title</option><option value="author">Sort: Author</option><option value="genre">Sort: Genre</option></select></div>
+    <div class="results-label" id="resultsLabel">THE COMPLETE COLLECTION</div><div id="bookGrid" class="book-grid"></div><p id="emptyState" class="empty-state" hidden>No books found. Try another search.</p>
+  </section>
+</section>
+<section id="readerView" class="reader-view" hidden>
+  <div class="reader-toolbar"><button id="backButton" class="text-button">← Back to library</button><span id="readerPosition">VOLUME 01 / 30</span></div>
+  <article class="reader-article"><div class="reader-cover-wrap"><img id="readerCover" src="cover-01.svg" alt="Book cover" class="reader-cover"><span id="readerGenre" class="genre-label"></span></div>
+  <div class="reader-details"><p class="eyebrow">FROM THE NOCTURNE ARCHIVE</p><h1 id="readerTitle">Book title</h1><p class="reader-author">by <span id="readerAuthor"></span></p><p id="readerSynopsis" class="reader-synopsis"></p>
+  <div class="reader-actions"><button id="likeButton" class="outline-button">♡ <span>Like</span></button><button id="bookmarkButton" class="outline-button">♧ Bookmark</button></div>
+  <div class="reading-progress"><div class="progress-heading"><span>YOUR READING PROGRESS</span><span id="progressText">0%</span></div><div class="progress-track"><div id="progressBar"></div></div></div></div></article>
+  <article class="chapter"><div class="chapter-heading"><p class="eyebrow">THE READING ROOM</p><h2 id="chapterTitle">A Complete Short Story</h2><p id="chapterSubtitle" class="chapter-subtitle"></p></div>
+  <div id="storyContent" class="story-content"></div><div class="chapter-end"><span>— END OF STORY —</span><p id="chapterNote"></p><a id="fullTextLink" href="#" target="_blank" rel="noopener noreferrer" class="gold-button">Find a full-text edition ↗</a><p class="source-note">The short story above is original fiction for this project. The classic book listing is a real work by the credited author. Use the external link to locate an edition of the original work; availability and translation rights vary.</p></div></article>
+  <div class="reader-navigation"><button id="previousBook" class="outline-button">← Previous volume</button><button id="nextBook" class="gold-button">Next volume →</button></div>
+</section>
+</main>
+<footer class="footer"><a href="#" class="brand" data-home><span class="brand-icon">N.</span><span>NOCTURNE <small>THE LITERARY ARCHIVE</small></span></a><p>A student literary archive. Independently designed for readers and thinkers.</p><p>© <span id="year"></span> NOCTURNE LIBRARY</p></footer>
+<button id="topButton" class="top-button" aria-label="Back to top">↑</button>
+<script src="script.js"></script>
+</body></html>
